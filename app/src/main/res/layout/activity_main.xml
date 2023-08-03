@@ -39,8 +39,9 @@
         android:textAlignment="center"
         android:textColor="#04AED4"
         android:textSize="14sp"
-        app:layout_constraintLeft_toLeftOf="@+id/amount"
-        app:layout_constraintTop_toBottomOf="@+id/amount" />
+        app:layout_constraintStart_toEndOf="@+id/back_arrow"
+        app:layout_constraintTop_toBottomOf="@+id/amount"
+        android:layout_marginStart="70dp"/>
 
     <TextView
         android:id="@+id/payment_method"
@@ -53,8 +54,10 @@
         android:text="Готівка"
         android:textAlignment="textEnd"
         android:textSize="14sp"
-        app:layout_constraintRight_toRightOf="@+id/amount"
-        app:layout_constraintTop_toBottomOf="@+id/amount" />
+        app:layout_constraintStart_toEndOf="@+id/back_arrow"
+        app:layout_constraintTop_toBottomOf="@+id/amount"
+        android:layout_marginStart="170dp"
+        />
 
     <ImageView
         android:id="@+id/cash_icon"
@@ -86,7 +89,8 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/delivery_background"
         app:layout_constraintStart_toStartOf="@id/delivery_title"
-        app:layout_constraintTop_toBottomOf="@+id/delivery_title">
+        app:layout_constraintTop_toBottomOf="@+id/delivery_title"
+        android:paddingBottom="5dp">
 
         <TextView
             android:id="@+id/address_title"
@@ -219,7 +223,8 @@
         android:layout_marginTop="5dp"
         android:background="@drawable/delivery_background"
         app:layout_constraintStart_toStartOf="@id/order_details_title"
-        app:layout_constraintTop_toBottomOf="@+id/order_details_title">
+        app:layout_constraintTop_toBottomOf="@+id/order_details_title"
+        android:paddingBottom="5dp">
 
         <TextView
             android:id="@+id/date_number_title"
