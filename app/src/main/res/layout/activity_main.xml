@@ -76,13 +76,13 @@
             android:id="@+id/delivery_title"
             android:layout_width="153dp"
             android:layout_height="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/roboto"
             android:gravity="center_vertical"
             android:text="Доставка"
             android:textColor="#7F000000"
             android:textSize="12sp"
-            android:layout_marginStart="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/status" />
 
@@ -333,8 +333,7 @@
             android:textColor="#7F000000"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@id/delivery_title"
-            app:layout_constraintTop_toBottomOf="@id/order_details_info"
-            />
+            app:layout_constraintTop_toBottomOf="@id/order_details_info" />
 
         <TextView
             android:id="@+id/edit_order_button"
@@ -367,6 +366,7 @@
                 android:background="@drawable/delivery_background"
                 android:orientation="vertical"
                 app:layout_goneMarginTop="15dp">
+
                 <TextView
                     android:id="@+id/item_name"
                     android:layout_width="wrap_content"
@@ -376,45 +376,90 @@
                     android:text="Рістретто"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
-                    android:id="@+id/item_bacrode"
+                    android:id="@+id/item_barcode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toStartOf="@+id/item_name"
-                    app:layout_constraintTop_toBottomOf="@+id/item_name"
+                    android:layout_marginStart="10dp"
+                    android:drawablePadding="7dp"
                     android:fontFamily="@font/roboto"
                     android:text="0000000000777"
                     android:textColor="#7F000000"
                     android:textSize="14sp"
-                    android:layout_marginStart="10dp"
-                    android:drawablePadding="7dp"
-                    app:drawableStartCompat="@drawable/barcode_icon" />
+                    app:drawableStartCompat="@drawable/barcode_icon"
+                    app:layout_constraintStart_toStartOf="@+id/item_name"
+                    app:layout_constraintTop_toBottomOf="@+id/item_name" />
 
                 <TextView
-                    android:id="@+id/total_sum"
+                    android:id="@+id/item_total_sum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_marginEnd="15dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="₴ 440.60"
-                    />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
                 <TextView
                     android:id="@+id/item_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/total_sum"
                     android:layout_marginEnd="15dp"
                     android:fontFamily="@font/roboto"
+                    android:text="2 х 220.30"
                     android:textColor="#7F000000"
                     android:textSize="14sp"
-                    android:text="2 х 220.30"
-                    />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/item_total_sum" />
 
+                <TextView
+                    android:id="@+id/item2_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Еспресо 100 мл"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_barcode" />
 
+                <TextView
+                    android:id="@+id/item2_barcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:drawablePadding="7dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="0000000000777"
+                    android:textColor="#7F000000"
+                    android:textSize="14sp"
+                    app:drawableStartCompat="@drawable/barcode_icon"
+                    app:layout_constraintStart_toStartOf="@+id/item2_name"
+                    app:layout_constraintTop_toBottomOf="@+id/item2_name" />
+
+                <TextView
+                    android:id="@+id/item2_total_sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="₴ 189.79"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/item_quantity" />
+
+                <TextView
+                    android:id="@+id/item2_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="5 х 20.00"
+                    android:textColor="#7F000000"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/item2_total_sum" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </ScrollView>
