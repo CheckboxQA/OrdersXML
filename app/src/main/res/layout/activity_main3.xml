@@ -139,15 +139,14 @@
         android:id="@+id/order_info_title"
         android:layout_width="153dp"
         android:layout_height="20dp"
-        android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/roboto"
         android:gravity="start|center_vertical"
         android:text="Замовлення"
         android:textColor="#7F000000"
         android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/details_info" />
+        app:layout_constraintStart_toStartOf="@id/details_title"
+        app:layout_constraintBottom_toTopOf="@id/items_list" />
 
     <TextView
         android:id="@+id/edit_order_button"
@@ -268,6 +267,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item2_total_sum" />
         <TextView
+            android:id="@+id/promotion_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/item2_barcode"
@@ -276,6 +276,7 @@
             android:text="Акція (-10%)"
             android:textColor="#7F000000"/>
         <TextView
+            android:id="@+id/promotion_amount_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
@@ -285,6 +286,46 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item2_quantity" />
+        <TextView
+            android:id="@+id/bonus_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/promotion_title"
+            app:layout_constraintStart_toStartOf="@id/item2_barcode"
+            android:fontFamily="@font/roboto"
+            android:text="Бонус"
+            android:textColor="#7F000000"/>
+        <TextView
+            android:id="@+id/bonus_amount_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/roboto"
+            android:text="-1.20"
+            android:textColor="#7F000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/promotion_amount_title" />
+        <TextView
+            android:id="@+id/courier_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/bonus_title"
+            app:layout_constraintStart_toStartOf="@id/item2_barcode"
+            android:fontFamily="@font/roboto"
+            android:text="Курʼєр"
+            android:textColor="#7F000000"/>
+        <TextView
+            android:id="@+id/courier_amount_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/roboto"
+            android:text="+100.99"
+            android:textColor="#7F000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bonus_amount_title" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
