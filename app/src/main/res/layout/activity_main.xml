@@ -18,6 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/order_without_delivery"
         android:layout_width="375dp"
         android:layout_height="70dp"
         android:text="Заказ без доставки"
