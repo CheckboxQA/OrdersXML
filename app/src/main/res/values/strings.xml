@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">OrdersXML</string>
+    <string name="order_with_delivery">Заказ с доставкой</string>
+    <string name="order_without_delivery">Заказ без доставкой</string>
+    <string name="order_amount">₴ 676.20</string>
+    <string name="order_status">Очікує</string>
+    <string name="order_payment_method">Готівка</string>
+    <string name="delivery_title">Доставка</string>
+    <string name="address_title">Адреса</string>
+    <string name="address_info">вул. Хрещатик, 1 кв. 123</string>
+    <string name="phone_number_title">Телефон</string>
+    <string name="phone_number">093 567 54 75</string>
+    <string name="recipient_title">Отримувач</string>
+    <string name="recipient">Кропивницький Станіслав Григорович</string>
+    <string name="comment_title">Коментар</string>
+    <string name="comment_content">Залишити у консʼєржа Ганни, 0934567298</string>
+    <string name="order_details_title">Деталі</string>
+    <string name="date_number_title">Номер та дата</string>
+    <string name="date_number_info">#123-456 від 23.02.2022</string>
+    <string name="delivery_spot_title">Слот доставки</string>
+    <string name="delivery_spot_info">23 лютого, 12:00</string>
+    <string name="box_number_title">Номер ящика</string>
+    <string name="box_number_info">24125342163</string>
+    <string name="payment_type_title">Оплата</string>
+    <string name="payment_type_info">Оплачено готівкою</string>
+    <string name="order_info_title">Замовлення</string>
+    <string name="edit_order_button">Редагувати</string>
+    <string name="delivery_done_button">Доставку виконано</string>
+
+
 </resources>

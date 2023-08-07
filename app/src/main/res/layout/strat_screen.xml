@@ -8,26 +8,35 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/order_with_delivery"
-        android:layout_width="375dp"
-        android:layout_height="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="70dp"
+        android:paddingStart="100dp"
+        android:paddingEnd="100dp"
         android:background="@drawable/button_shape"
         android:textColor="@color/white"
-        android:text="Заказ с доставкой"
+        android:text="@string/order_with_delivery"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textAllCaps="false"/>
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/order_without_delivery"
-        android:layout_width="375dp"
-        android:layout_height="70dp"
-        android:text="Заказ без доставки"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="70dp"
+        android:paddingStart="100dp"
+        android:paddingEnd="100dp"
+        android:layout_margin="10dp"
+        android:text="@string/order_without_delivery"
         android:background="@drawable/button_shape"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/order_with_delivery"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="50dp"
+        android:textAllCaps="false"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
