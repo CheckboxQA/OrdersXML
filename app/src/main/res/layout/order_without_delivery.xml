@@ -336,7 +336,7 @@
         android:layout_height="52dp"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/button_style"
         android:fontFamily="@font/sf_pro"
         android:gravity="center"
         android:text="Замовлення виконано"

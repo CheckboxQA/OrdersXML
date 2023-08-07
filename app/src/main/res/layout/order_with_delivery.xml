@@ -23,8 +23,8 @@
         <TextView
             android:id="@+id/amount"
             android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_marginTop="96dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
             android:fontFamily="@font/roboto"
             android:text="@string/order_amount"
             android:textAlignment="center"
@@ -35,124 +35,107 @@
 
         <TextView
             android:id="@+id/status"
-            android:layout_width="70dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="70dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/status_background"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:fontFamily="@font/roboto"
             android:text="@string/order_status"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textColor="#04AED4"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/back_arrow"
+            app:layout_constraintStart_toStartOf="@+id/amount"
             app:layout_constraintTop_toBottomOf="@+id/amount" />
 
         <TextView
             android:id="@+id/payment_method"
-            android:layout_width="83dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="170dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/payment_type_background"
             android:fontFamily="@font/roboto"
-            android:paddingEnd="10dp"
             android:text="@string/order_payment_method"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:textAlignment="textEnd"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/back_arrow"
-            app:layout_constraintTop_toBottomOf="@+id/amount" />
-
-        <ImageView
-            android:id="@+id/cash_icon"
-            android:layout_width="10dp"
-            android:layout_height="11dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/ic_cash"
-            app:layout_constraintStart_toStartOf="@+id/payment_method"
-            app:layout_constraintTop_toTopOf="@+id/payment_method" />
+            app:layout_constraintEnd_toEndOf="@+id/amount"
+            app:layout_constraintTop_toBottomOf="@+id/amount"
+            app:drawableStartCompat="@drawable/ic_cash"
+            android:drawablePadding="2dp"/>
 
         <TextView
             android:id="@+id/delivery_title"
-            android:layout_width="153dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto"
-            android:gravity="center_vertical"
+            style="@style/TitlesStyle"
             android:text="@string/delivery_title"
-            android:textColor="#7F000000"
-            android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/status" />
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/delivery_info"
-            android:layout_width="378dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:padding="5dp"
+            android:minWidth="380dp"
+            android:layout_margin="10dp"
+            android:padding="16dp"
             android:background="@drawable/delivery_background"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/delivery_title">
 
             <TextView
                 android:id="@+id/address_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto"
+                style="@style/TitlesStyle"
                 android:text="@string/address_title"
-                android:textColor="#7F000000"
-                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/address_info"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
-                android:fontFamily="@font/roboto"
-                android:text="вул. Хрещатик, 1 кв. 123"
-                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address_info"
+                style="@style/TextStyle"
                 app:layout_constraintStart_toStartOf="@+id/address_title"
                 app:layout_constraintTop_toBottomOf="@+id/address_title" />
 
             <ImageView
                 android:id="@+id/navigation"
                 android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
+                android:layout_marginTop="15dp"
                 android:src="@drawable/navigation"
-                app:layout_constraintBottom_toBottomOf="@id/address_info"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/address_info"
-                app:layout_constraintTop_toTopOf="@+id/address_title" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/phone_number_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto"
+                style="@style/TitlesStyle"
                 android:text="@string/phone_number_title"
-                android:textColor="#7F000000"
-                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/address_info" />
 
             <TextView
                 android:id="@+id/phone_number"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
-                android:fontFamily="@font/roboto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextStyle"
                 android:text="@string/phone_number"
-                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/phone_number_title"
                 app:layout_constraintTop_toBottomOf="@+id/phone_number_title" />
 
@@ -160,40 +143,36 @@
                 android:id="@+id/phone"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="5dp"
                 android:src="@drawable/phone"
-                app:layout_constraintBottom_toBottomOf="@id/phone_number"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/phone_number"
-                app:layout_constraintTop_toTopOf="@+id/phone_number_title" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="55dp"/>
 
             <TextView
                 android:id="@+id/recipient_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
-                android:fontFamily="@font/roboto"
+                style="@style/TitlesStyle"
                 android:text="@string/recipient_title"
-                android:textColor="#7F000000"
-                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/phone_number" />
 
             <TextView
                 android:id="@+id/recipient"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
-                android:fontFamily="@font/roboto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextStyle"
                 android:text="@string/recipient"
-                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/recipient_title"
                 app:layout_constraintTop_toBottomOf="@+id/recipient_title" />
 
             <TextView
                 android:id="@+id/comment_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/roboto"
@@ -205,7 +184,7 @@
 
             <TextView
                 android:id="@+id/comment_content"
-                android:layout_width="299dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/comment_content"
@@ -216,8 +195,8 @@
 
         <TextView
             android:id="@+id/order_details_title"
-            android:layout_width="153dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/roboto"
             android:gravity="start|center_vertical"
@@ -229,19 +208,19 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/order_details_info"
-            android:layout_width="378dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:padding="5dp"
+            android:minWidth="380dp"
+            android:padding="16dp"
+            android:layout_margin="10dp"
             android:background="@drawable/delivery_background"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/order_details_title">
 
             <TextView
                 android:id="@+id/date_number_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/roboto"
@@ -253,7 +232,7 @@
 
             <TextView
                 android:id="@+id/date_number_info"
-                android:layout_width="299dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/date_number_info"
@@ -263,8 +242,8 @@
 
             <TextView
                 android:id="@+id/delivery_spot_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/delivery_spot_title"
                 android:textColor="#7F000000"
@@ -274,7 +253,7 @@
 
             <TextView
                 android:id="@+id/delivery_spot_info"
-                android:layout_width="299dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/delivery_spot_info"
@@ -284,8 +263,8 @@
 
             <TextView
                 android:id="@+id/box_number_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/box_number_title"
                 android:textColor="#7F000000"
@@ -295,7 +274,7 @@
 
             <TextView
                 android:id="@+id/box_number_info"
-                android:layout_width="299dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/box_number_info"
@@ -305,8 +284,8 @@
 
             <TextView
                 android:id="@+id/payment_type_title"
-                android:layout_width="299dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/payment_type_title"
                 android:textColor="#7F000000"
@@ -316,7 +295,7 @@
 
             <TextView
                 android:id="@+id/payment_type_info"
-                android:layout_width="299dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto"
                 android:text="@string/payment_type_info"
@@ -327,28 +306,29 @@
 
         <TextView
             android:id="@+id/order_info_title"
-            android:layout_width="153dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/roboto"
             android:gravity="start|center_vertical"
             android:text="@string/order_info_title"
             android:textColor="#7F000000"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@id/delivery_title"
+            app:layout_constraintStart_toStartOf="@id/delivery_info"
             app:layout_constraintTop_toBottomOf="@id/order_details_info" />
 
         <TextView
             android:id="@+id/edit_order_button"
-            android:layout_width="153dp"
-            android:layout_height="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
             android:fontFamily="@font/roboto_bold"
             android:gravity="end|center_vertical"
             android:text="@string/edit_order_button"
             android:textColor="#04AED4"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@id/order_details_info"
+            app:layout_constraintEnd_toEndOf="@id/delivery_info"
             app:layout_constraintTop_toBottomOf="@id/order_details_info" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -463,13 +443,8 @@
             android:layout_height="52dp"
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
-            android:background="@drawable/button_shape"
-            android:fontFamily="@font/sf_pro"
-            android:gravity="center"
+            style="@style/ButtonStyle"
             android:text="@string/delivery_done_button"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
