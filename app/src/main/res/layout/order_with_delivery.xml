@@ -111,7 +111,7 @@
 
             <ImageView
                 android:id="@+id/navigation"
-                android:layout_width="24dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:layout_marginTop="15dp"
@@ -141,8 +141,8 @@
 
             <ImageView
                 android:id="@+id/phone"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:src="@drawable/phone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
