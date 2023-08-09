@@ -3,17 +3,17 @@ package com.example.ordersxml
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.appcompat.widget.AppCompatButton
+import com.example.ordersxml.databinding.StartScreenBinding
+import com.example.ordersxml.databinding.OrderWithDeliveryBinding
 
 class StartScreen : AppCompatActivity() {
+    private lateinit var binding: StartScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.strat_screen)
-        orderWithDelivery()
-    }
-
-    fun orderWithDelivery(){
-        findViewById<AppCompatButton>(R.id.order_with_delivery).setOnClickListener{
+        binding = StartScreenBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+        binding.orderWithDelivery.setOnClickListener {
             val intent = Intent(this, OrderWithDelivery::class.java)
             startActivity(intent)
         }

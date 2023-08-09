@@ -339,7 +339,6 @@
             android:background="@drawable/delivery_background"
             app:layout_goneMarginTop="15dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_order_button"
             android:layout_marginTop="5dp">
