@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ordersxml.databinding.StartScreenBinding
-import com.example.ordersxml.databinding.OrderWithDeliveryBinding
 
 class StartScreen : AppCompatActivity() {
     private lateinit var binding: StartScreenBinding

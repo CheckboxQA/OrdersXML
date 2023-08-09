@@ -331,7 +331,7 @@
             app:layout_constraintEnd_toEndOf="@id/delivery_info"
             app:layout_constraintTop_toBottomOf="@id/order_details_info" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/items_list"
             android:layout_width="378dp"
             android:layout_height="wrap_content"
@@ -343,98 +343,7 @@
             app:layout_constraintTop_toBottomOf="@+id/edit_order_button"
             android:layout_marginTop="5dp">
 
-            <TextView
-                android:id="@+id/item_name"
-                android:layout_width="378dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:fontFamily="@font/roboto"
-                android:text="Рістретто"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/item_barcode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="7dp"
-                android:fontFamily="@font/roboto"
-                android:text="0000000000777"
-                android:textColor="#7F000000"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/barcode_icon"
-                app:layout_constraintStart_toStartOf="@+id/item_name"
-                app:layout_constraintTop_toBottomOf="@+id/item_name" />
-
-            <TextView
-                android:id="@+id/item_total_sum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="₴ 440.60"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/item_quantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:fontFamily="@font/roboto"
-                android:text="2 х 220.30"
-                android:textColor="#7F000000"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item_total_sum" />
-
-            <TextView
-                android:id="@+id/item2_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:fontFamily="@font/roboto"
-                android:text="Еспресо 100 мл"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_barcode" />
-
-            <TextView
-                android:id="@+id/item2_barcode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:drawablePadding="7dp"
-                android:fontFamily="@font/roboto"
-                android:text="0000000000777"
-                android:textColor="#7F000000"
-                android:textSize="14sp"
-                app:drawableStartCompat="@drawable/barcode_icon"
-                app:layout_constraintStart_toStartOf="@+id/item2_name"
-                app:layout_constraintTop_toBottomOf="@+id/item2_name" />
-
-            <TextView
-                android:id="@+id/item2_total_sum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="₴ 189.79"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_quantity" />
-
-            <TextView
-                android:id="@+id/item2_quantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="15dp"
-                android:fontFamily="@font/roboto"
-                android:text="5 х 20.00"
-                android:textColor="#7F000000"
-                android:textSize="14sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/item2_total_sum" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.recyclerview.widget.RecyclerView>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/delivery_done_button"
