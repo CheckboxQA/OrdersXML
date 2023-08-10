@@ -38,7 +38,6 @@ class ProductAdapter(private val productList: List<Product>) :
                 barcodeTextView.visibility = View.GONE
             } else {
             barcodeTextView.visibility = View.VISIBLE
-            barcodeTextView.text = product.barcode
         }
         }
     }
