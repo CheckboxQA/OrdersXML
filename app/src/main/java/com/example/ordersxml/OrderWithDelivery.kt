@@ -4,6 +4,7 @@ import ProductAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,10 +28,18 @@ class OrderWithDelivery : AppCompatActivity() {
             Product("Рістретто", "3216754121", "₴ 55.60", "1 х 55.60"),
             Product("Рістретто", null, "₴ 440.75", "1 х 440.75")
         )
-        setupRecyclerView(productList)
+        val delivery = false
+        setupRecyclerView(productList, delivery)
+        if (delivery) {
+            binding.deliveryInfo.visibility = View.VISIBLE
+            binding.deliveryTitle.visibility = View.VISIBLE
+        } else {
+            binding.deliveryInfo.visibility = View.GONE
+            binding.deliveryTitle.visibility = View.GONE
+        }
     }
 
-    private fun setupRecyclerView(products: List<Product>) {
+    private fun setupRecyclerView(products: List<Product>, delivery : Boolean) {
         val recyclerView: RecyclerView = findViewById(R.id.items_list)
         val adapter = ProductAdapter(products)
         recyclerView.adapter = adapter

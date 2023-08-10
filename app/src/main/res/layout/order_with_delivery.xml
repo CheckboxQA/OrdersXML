@@ -198,12 +198,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/roboto"
             android:gravity="start|center_vertical"
             android:text="@string/order_details_title"
             android:textColor="#7F000000"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@id/delivery_title"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/delivery_info" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -309,12 +310,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="@font/roboto"
             android:gravity="start|center_vertical"
             android:text="@string/order_info_title"
             android:textColor="#7F000000"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@id/delivery_info"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/order_details_info" />
 
         <TextView
