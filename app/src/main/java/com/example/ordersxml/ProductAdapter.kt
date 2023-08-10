@@ -2,6 +2,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.TextView.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ordersxml.R
 import com.example.test.Product
@@ -33,6 +34,12 @@ class ProductAdapter(private val productList: List<Product>) :
             barcodeTextView.text = product.barcode
             totalSumTextView.text = product.totalSum
             quantityTextView.text = product.quantity
+            if (product.barcode == null) {
+                barcodeTextView.visibility = View.GONE
+            } else {
+            barcodeTextView.visibility = View.VISIBLE
+            barcodeTextView.text = product.barcode
+        }
         }
     }
 }

@@ -1,15 +1,15 @@
-<GridLayout
+<GridLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/goods_list"
-    android:layout_width="378dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="5dp"
+    android:rowCount="2"
+    android:columnCount="2"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <TextView
         android:id="@+id/item_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:fontFamily="@font/roboto"
         android:textSize="16sp"
         android:layout_row="0"
@@ -23,21 +23,18 @@
         android:layout_row="1"
         android:layout_column="0"
         android:layout_gravity="start"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="5dp"
-        android:drawableStart="@drawable/barcode_icon"
         android:drawablePadding="7dp"
         android:fontFamily="@font/roboto"
         android:textColor="#7F000000"
-        android:textSize="14sp" />
+        android:textSize="14sp"
+        app:drawableStartCompat="@drawable/barcode_icon" />
 
     <TextView
         android:id="@+id/item_total_sum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="0"
-        android:layout_column="2"
-        android:layout_marginEnd="15dp"
+        android:layout_column="1"
         android:fontFamily="@font/roboto_bold"
         android:gravity="end"
         android:textSize="16sp" />
@@ -47,8 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_row="1"
-        android:layout_column="2"
-        android:layout_marginEnd="15dp"
+        android:layout_column="1"
         android:fontFamily="@font/roboto"
         android:gravity="end"
         android:textColor="#7F000000"
