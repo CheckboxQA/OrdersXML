@@ -16,7 +16,7 @@
             android:name=".OrderWithoutDelivery"
             android:exported="false" />
         <activity
-            android:name=".OrderWithDelivery"
+            android:name=".OrderActivity"
             android:exported="false" />
         <activity
             android:name=".StartScreen"

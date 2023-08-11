@@ -5,19 +5,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ordersxml.databinding.OrderWithDeliveryBinding
+import com.example.ordersxml.databinding.OrderScreenBinding
 import com.example.test.Product
 
-class OrderWithDelivery : AppCompatActivity() {
-    private lateinit var binding: OrderWithDeliveryBinding
+class OrderActivity : AppCompatActivity() {
+    private lateinit var binding: OrderScreenBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = OrderWithDeliveryBinding.inflate(layoutInflater)
+        binding = OrderScreenBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         binding.deliveryDoneButton.setOnClickListener {
