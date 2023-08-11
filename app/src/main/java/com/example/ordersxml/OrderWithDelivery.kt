@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ordersxml.databinding.OrderWithDeliveryBinding
@@ -18,7 +20,7 @@ class OrderWithDelivery : AppCompatActivity() {
         binding = OrderWithDeliveryBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-        binding.deliveryDoneButton.setOnClickListener{
+        binding.deliveryDoneButton.setOnClickListener {
             val intent = Intent(this, StartScreen::class.java)
             startActivity(intent)
         }
@@ -28,7 +30,7 @@ class OrderWithDelivery : AppCompatActivity() {
             Product("Рістретто", "3216754121", "₴ 55.60", "1 х 55.60"),
             Product("Рістретто", null, "₴ 440.75", "1 х 440.75")
         )
-        val delivery = false
+        val delivery = true
         setupRecyclerView(productList)
         if (delivery) {
             binding.deliveryInfo.visibility = View.VISIBLE
