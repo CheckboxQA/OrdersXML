@@ -29,7 +29,7 @@ class OrderWithDelivery : AppCompatActivity() {
             Product("Рістретто", null, "₴ 440.75", "1 х 440.75")
         )
         val delivery = false
-        setupRecyclerView(productList, delivery)
+        setupRecyclerView(productList)
         if (delivery) {
             binding.deliveryInfo.visibility = View.VISIBLE
             binding.deliveryTitle.visibility = View.VISIBLE
@@ -39,7 +39,7 @@ class OrderWithDelivery : AppCompatActivity() {
         }
     }
 
-    private fun setupRecyclerView(products: List<Product>, delivery : Boolean) {
+    private fun setupRecyclerView(products: List<Product>) {
         val recyclerView: RecyclerView = findViewById(R.id.items_list)
         val adapter = ProductAdapter(products)
         recyclerView.adapter = adapter
