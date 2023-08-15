@@ -1,44 +1,48 @@
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.TextView.*
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.ordersxml.R
 import com.example.test.Product
+import com.example.ordersxml.databinding.ItemOrderBinding
 
-class ProductAdapter(private val productList: List<Product>) :
-    RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
+class ProductAdapter() :
+    ListAdapter<Product, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
 
-    inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val nameTextView: TextView = itemView.findViewById(R.id.item_name)
-        private val barcodeTextView: TextView = itemView.findViewById(R.id.item_barcode)
-        private val totalSumTextView: TextView = itemView.findViewById(R.id.item_total_sum)
-        private val quantityTextView: TextView = itemView.findViewById(R.id.item_quantity)
-
+    inner class ProductViewHolder(private val binding: ItemOrderBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
-            nameTextView.text = product.name
-            barcodeTextView.text = product.barcode
-            totalSumTextView.text = product.totalSum
-            quantityTextView.text = product.quantity
+            binding.itemName.text = product.name
+            binding.itemBarcode.text = product.barcode
+            binding.itemTotalSum.text = product.totalSum
+            binding.itemQuantity.text = product.quantity
             if (product.barcode == null) {
-                barcodeTextView.visibility = View.GONE
+                binding.itemBarcode.visibility = View.GONE
             } else {
-                barcodeTextView.visibility = View.VISIBLE
+                binding.itemBarcode.visibility = View.VISIBLE
             }
         }
     }
+
+    class ProductDiffCallback : DiffUtil.ItemCallback<Product>() {
+        override fun areItemsTheSame(oldItem: Product, newItem: Product): Boolean {
+            return oldItem == newItem
+        }
+
+        override fun areContentsTheSame(oldItem: Product, newItem: Product): Boolean {
+            return oldItem == newItem
+        }
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_order, parent, false)
-        return ProductViewHolder(view)
+        val binding = ItemOrderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ProductViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val product = productList[position]
+        val product = getItem(position)
         holder.bind(product)
     }
-
-    override fun getItemCount(): Int = productList.size
 
 }
