@@ -28,7 +28,7 @@ class OrderScreen : AppCompatActivity() {
             deliverySpot = "Some delivery spot",
             boxNumber = "123",
             paymentType = "Credit Card",
-            delivery = false
+            delivery = true
         )
 
         // Привязываем viewModel к привязке данных и жизненному циклу активити
