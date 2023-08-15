@@ -53,5 +53,6 @@ class OrderScreen : AppCompatActivity() {
         binding.itemsList.adapter = adapter
         binding.itemsList.layoutManager = LinearLayoutManager(this)
         adapter.submitList(products)
+        viewModel.setTotalAmount(products)
     }
 }
