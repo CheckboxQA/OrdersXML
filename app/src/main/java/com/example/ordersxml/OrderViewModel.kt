@@ -20,7 +20,7 @@ data class OrderViewModel(
     val totalAmount: LiveData<String>
         get() = _totalAmount
 
-    fun calculateTotalAmount(products: List<Product>): String {
+    private fun calculateTotalAmount(products: List<Product>): String {
         var totalAmount = 0.0
         for (product in products) {
             val amount = product.totalSum.substringAfter("₴").trim().toDouble()
