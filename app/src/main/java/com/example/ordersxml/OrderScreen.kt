@@ -18,7 +18,6 @@ class OrderScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.order_screen)
 
-        // Создаем экземпляр OrderViewModel с нужными данными
         viewModel = OrderViewModel(
             address = "Some address",
             phoneNumber = "1234567890",
@@ -31,7 +30,6 @@ class OrderScreen : AppCompatActivity() {
             delivery = true
         )
 
-        // Привязываем viewModel к привязке данных и жизненному циклу активити
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
 

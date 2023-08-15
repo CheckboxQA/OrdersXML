@@ -10,7 +10,8 @@ import com.example.ordersxml.databinding.ItemOrderBinding
 class ProductAdapter() :
     ListAdapter<Product, ProductAdapter.ProductViewHolder>(ProductDiffCallback()) {
 
-    inner class ProductViewHolder(private val binding: ItemOrderBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ProductViewHolder(private val binding: ItemOrderBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.itemName.text = product.name
             binding.itemBarcode.text = product.barcode
