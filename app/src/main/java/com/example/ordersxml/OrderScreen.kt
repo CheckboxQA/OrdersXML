@@ -8,18 +8,16 @@ import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ordersxml.databinding.OrderScreenBinding
-import com.example.ordersxml.databinding.ItemOrderBinding
 
 class OrderScreen : AppCompatActivity() {
     private var binding: OrderScreenBinding? = null
-    private var viewModel: OrderViewModel? = null
     private var adapter: ProductAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.order_screen)
 
-        viewModel = OrderViewModel(
+        val orderModel = OrderViewModel(
             address = "Some address",
             phoneNumber = "1234567890",
             recipient = "John Doe",
@@ -31,7 +29,7 @@ class OrderScreen : AppCompatActivity() {
             delivery = true
         )
 
-        binding!!.viewModel = viewModel
+        binding!!.dataModel = orderModel
         binding!!.lifecycleOwner = this
 
         binding!!.deliveryDoneButton.setOnClickListener {

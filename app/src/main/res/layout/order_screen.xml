@@ -8,7 +8,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="viewModel"
+            name="dataModel"
             type="com.example.ordersxml.OrderViewModel" />
     </data>
 
@@ -86,7 +86,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:text="@string/delivery_title"
-                android:visibility="@{viewModel.delivery ? View.VISIBLE : View.GONE}"
+                android:visibility="@{dataModel.delivery ? View.VISIBLE : View.GONE}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/status" />
 
@@ -99,7 +99,7 @@
                 android:background="@drawable/delivery_background"
                 android:minWidth="380dp"
                 android:padding="10dp"
-                android:visibility="@{viewModel.delivery ? View.VISIBLE : View.GONE}"
+                android:visibility="@{dataModel.delivery ? View.VISIBLE : View.GONE}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/delivery_title">
 
@@ -119,7 +119,7 @@
                     style="@style/TextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.address}"
+                    android:text="@{dataModel.address}"
                     app:layout_constraintStart_toStartOf="@+id/address_title"
                     app:layout_constraintTop_toBottomOf="@+id/address_title" />
 
@@ -149,7 +149,7 @@
                     style="@style/TextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.phoneNumber}"
+                    android:text="@{dataModel.phoneNumber}"
                     app:layout_constraintStart_toStartOf="@+id/phone_number_title"
                     app:layout_constraintTop_toBottomOf="@+id/phone_number_title" />
 
@@ -179,7 +179,7 @@
                     style="@style/TextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.recipient}"
+                    android:text="@{dataModel.recipient}"
                     app:layout_constraintStart_toStartOf="@+id/recipient_title"
                     app:layout_constraintTop_toBottomOf="@+id/recipient_title" />
 
@@ -201,7 +201,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="@{viewModel.comment}"
+                    android:text="@{dataModel.comment}"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/comment_title"
                     app:layout_constraintTop_toBottomOf="@+id/comment_title" />
@@ -250,7 +250,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="@{viewModel.numberAndData}"
+                    android:text="@{dataModel.numberAndData}"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/date_number_title"
                     app:layout_constraintTop_toBottomOf="@+id/date_number_title" />
@@ -271,7 +271,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="@{viewModel.deliverySpot}"
+                    android:text="@{dataModel.deliverySpot}"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/delivery_spot_title"
                     app:layout_constraintTop_toBottomOf="@+id/delivery_spot_title" />
@@ -292,7 +292,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="@{viewModel.boxNumber}"
+                    android:text="@{dataModel.boxNumber}"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/box_number_title"
                     app:layout_constraintTop_toBottomOf="@+id/box_number_title" />
@@ -313,7 +313,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto"
-                    android:text="@{viewModel.paymentType}"
+                    android:text="@{dataModel.paymentType}"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="@+id/payment_type_title"
                     app:layout_constraintTop_toBottomOf="@+id/payment_type_title" />

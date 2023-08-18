@@ -1,7 +1,5 @@
 package com.example.ordersxml
 
-import androidx.lifecycle.ViewModel
-
 data class OrderViewModel(
     val address: String,
     val phoneNumber: String,
@@ -12,6 +10,4 @@ data class OrderViewModel(
     val boxNumber: String,
     val paymentType: String,
     val delivery: Boolean,
-) : ViewModel() {
-
-}
+)
