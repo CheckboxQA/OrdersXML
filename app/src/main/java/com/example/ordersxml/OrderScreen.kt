@@ -4,10 +4,11 @@ import ProductAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ordersxml.databinding.OrderScreenBinding
-import com.example.ordersxml.Product
+import com.example.ordersxml.databinding.ItemOrderBinding
 
 class OrderScreen : AppCompatActivity() {
     private var binding: OrderScreenBinding? = null
@@ -53,5 +54,6 @@ class OrderScreen : AppCompatActivity() {
         binding!!.itemsList.adapter = adapter
         binding!!.itemsList.layoutManager = LinearLayoutManager(this)
         adapter!!.submitList(products)
+        Log.d("OrderScreen", "Product list size: ${products.size}")
     }
 }

@@ -13,6 +13,7 @@ class ProductAdapter() :
     inner class ProductViewHolder(private val binding: ItemOrderBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
+            binding.product = product
             binding.itemName.text = product.name
             binding.itemBarcode.text = product.barcode
             binding.itemTotalSum.text = product.totalSum

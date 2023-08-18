@@ -6,7 +6,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="viewModel"
+            name="product"
             type="com.example.ordersxml.Product" />
     </data>
 
@@ -25,7 +25,7 @@
             android:textSize="16sp"
             android:layout_row="0"
             android:layout_gravity="start"
-            android:text="@{viewModel.name}"/>
+            android:text="@{product.name}"/>
 
         <TextView
             android:id="@+id/item_barcode"
@@ -39,7 +39,7 @@
             android:textColor="#7F000000"
             android:textSize="14sp"
             app:drawableStartCompat="@drawable/barcode_icon"
-            android:text="@{viewModel.barcode}"/>
+            android:text="@{product.barcode}"/>
 
         <TextView
             android:id="@+id/item_total_sum"
@@ -50,7 +50,7 @@
             android:fontFamily="@font/roboto_bold"
             android:gravity="end"
             android:textSize="16sp"
-            android:text="@{viewModel.totalSum}"/>
+            android:text="@{product.totalSum}"/>
 
         <TextView
             android:id="@+id/item_quantity"
@@ -62,6 +62,6 @@
             android:gravity="end"
             android:textColor="#7F000000"
             android:textSize="14sp"
-            android:text="@{viewModel.quantity}"/>
+            android:text="@{product.quantity}"/>
     </GridLayout>
 </layout>
