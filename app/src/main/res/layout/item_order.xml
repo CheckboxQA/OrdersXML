@@ -1,52 +1,67 @@
-<GridLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/goods_list"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:rowCount="2"
-    android:columnCount="2"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
-        android:textSize="16sp"
-        android:layout_row="0"
-        android:layout_gravity="start"
-        />
+    <data>
 
-    <TextView
-        android:id="@+id/item_barcode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="0"
-        android:layout_gravity="start"
-        android:drawablePadding="7dp"
-        android:fontFamily="@font/roboto"
-        android:textColor="#7F000000"
-        android:textSize="14sp"
-        app:drawableStartCompat="@drawable/barcode_icon" />
+        <import type="android.view.View" />
 
-    <TextView
-        android:id="@+id/item_total_sum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_row="0"
-        android:layout_column="1"
-        android:fontFamily="@font/roboto_bold"
-        android:gravity="end"
-        android:textSize="16sp" />
+        <variable
+            name="viewModel"
+            type="com.example.ordersxml.Product" />
+    </data>
 
-    <TextView
-        android:id="@+id/item_quantity"
-        android:layout_width="wrap_content"
+    <GridLayout
+        android:id="@+id/goods_list"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_row="1"
-        android:layout_column="1"
-        android:fontFamily="@font/roboto"
-        android:gravity="end"
-        android:textColor="#7F000000"
-        android:textSize="14sp" />
-</GridLayout>
+        android:rowCount="2"
+        android:columnCount="2">
+
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textSize="16sp"
+            android:layout_row="0"
+            android:layout_gravity="start"
+            android:text="@{viewModel.name}"/>
+
+        <TextView
+            android:id="@+id/item_barcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="start"
+            android:drawablePadding="7dp"
+            android:fontFamily="@font/roboto"
+            android:textColor="#7F000000"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/barcode_icon"
+            android:text="@{viewModel.barcode}"/>
+
+        <TextView
+            android:id="@+id/item_total_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="end"
+            android:textSize="16sp"
+            android:text="@{viewModel.totalSum}"/>
+
+        <TextView
+            android:id="@+id/item_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:fontFamily="@font/roboto"
+            android:gravity="end"
+            android:textColor="#7F000000"
+            android:textSize="14sp"
+            android:text="@{viewModel.quantity}"/>
+    </GridLayout>
+</layout>

@@ -7,12 +7,12 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ordersxml.databinding.OrderScreenBinding
-import com.example.test.Product
+import com.example.ordersxml.Product
 
 class OrderScreen : AppCompatActivity() {
-    private lateinit var binding: OrderScreenBinding
-    private lateinit var viewModel: OrderViewModel
-    private lateinit var adapter: ProductAdapter
+    private var binding: OrderScreenBinding? = null
+    private var viewModel: OrderViewModel? = null
+    private var adapter: ProductAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,19 +30,19 @@ class OrderScreen : AppCompatActivity() {
             delivery = true
         )
 
-        binding.viewModel = viewModel
-        binding.lifecycleOwner = this
+        binding!!.viewModel = viewModel
+        binding!!.lifecycleOwner = this
 
-        binding.deliveryDoneButton.setOnClickListener {
+        binding!!.deliveryDoneButton.setOnClickListener {
             val intent = Intent(this, StartScreen::class.java)
             startActivity(intent)
         }
 
         val productList = listOf(
-            Product("Рістретто", null, "₴ 440.60", "2 х 220.30"),
-            Product("Молоко", "12345948947", "₴ 98.60", "1 х 98.60"),
-            Product("Рістретто", "3216754121", "₴ 55.60", "1 х 55.60"),
-            Product("Рістретто", null, "₴ 440.75", "1 х 440.75")
+            Product("1","Рістретто", null, "₴ 440.60", "2 х 220.30"),
+            Product("2","Молоко", "12345948947", "₴ 98.60", "1 х 98.60"),
+            Product("3","Кава", "3216754121", "₴ 55.60", "1 х 55.60"),
+            Product("4","Чай", null, "₴ 440.75", "1 х 440.75")
         )
 
         setupRecyclerView(productList)
@@ -50,8 +50,8 @@ class OrderScreen : AppCompatActivity() {
 
     private fun setupRecyclerView(products: List<Product>) {
         adapter = ProductAdapter()
-        binding.itemsList.adapter = adapter
-        binding.itemsList.layoutManager = LinearLayoutManager(this)
-        adapter.submitList(products)
+        binding!!.itemsList.adapter = adapter
+        binding!!.itemsList.layoutManager = LinearLayoutManager(this)
+        adapter!!.submitList(products)
     }
 }
