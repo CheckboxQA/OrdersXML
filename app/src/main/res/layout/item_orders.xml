@@ -61,12 +61,23 @@
             android:fontFamily="@font/roboto"/>
 
         <TextView
+            android:id="@+id/order_total_sum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/order_comment"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/order_amount"
             android:textSize="20dp"/>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginTop="110dp"
+            android:background="#E4E4E4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

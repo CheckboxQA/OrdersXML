@@ -37,6 +37,10 @@ class OrderScreen : AppCompatActivity() {
             val intent = Intent(this, StartScreen::class.java)
             startActivity(intent)
         }
+        binding!!.backArrow.setOnClickListener{
+            val intent = Intent(this, StartScreen::class.java)
+            startActivity(intent)
+        }
 
         val productList = listOf(
             Product("1","Рістретто", null, "₴ 440.60", "2 х 220.30"),
