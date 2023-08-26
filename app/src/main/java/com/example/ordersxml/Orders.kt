@@ -48,8 +48,6 @@ class Orders : AppCompatActivity() {
 
     private fun setupRecyclerView(ordersList: List<Order>) {
         adapter = OrderAdapter { order ->
-            // Обработка клика на элементе списка
-            // Здесь вы можете открыть экран OrderScreen с передачей данных о заказе
             val intent = Intent(this, OrderScreen::class.java)
             startActivity(intent)
         }

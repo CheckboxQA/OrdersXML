@@ -13,9 +13,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/order_info"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        >
 
         <TextView
             android:id="@+id/order_number_date"
@@ -25,6 +26,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:text="@{order.numberAndData}"
             style="@style/TitlesStyle"
+            android:layout_marginTop="5dp"
             />
         <TextView
             android:id="@+id/order_address"
@@ -34,6 +36,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:text="@{order.address}"
             style="@style/TextStyle"
+            android:layout_marginTop="5dp"
             />
         <TextView
             android:id="@+id/order_comment"
@@ -43,7 +46,27 @@
             app:layout_constraintStart_toStartOf="parent"
             android:text="@{order.comment}"
             style="@style/TitlesStyle"
+            android:layout_marginTop="5dp"
             />
+        <TextView
+            android:id="@+id/order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/order_number_date"
+            android:text="@string/order_status"
+            android:textColor="#04AED4"
+            android:textSize="14sp"
+            android:background="@drawable/status_background"
+            android:fontFamily="@font/roboto"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/order_comment"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="@string/order_amount"
+            android:textSize="20dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
