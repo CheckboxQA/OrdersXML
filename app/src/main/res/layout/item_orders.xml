@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="order"
+            type="com.example.ordersxml.OrderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/order_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:id="@+id/order_number_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@{order.numberAndData}"
+            style="@style/TitlesStyle"
+            />
+        <TextView
+            android:id="@+id/order_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/order_number_date"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{order.address}"
+            style="@style/TextStyle"
+            />
+        <TextView
+            android:id="@+id/order_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/order_address"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{order.comment}"
+            style="@style/TitlesStyle"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

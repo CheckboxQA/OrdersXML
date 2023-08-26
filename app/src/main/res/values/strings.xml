@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">OrdersXML</string>
-    <string name="order_with_delivery">Заказ с доставкой</string>
+    <string name="order_with_delivery">Заказы</string>
     <string name="order_without_delivery">Заказ без доставкой</string>
     <string name="order_amount">₴ 676.20</string>
     <string name="order_status">Очікує</string>
@@ -26,6 +26,8 @@
     <string name="order_info_title">Замовлення</string>
     <string name="edit_order_button">Редагувати</string>
     <string name="delivery_done_button">Доставку виконано</string>
+    <string name="orders_list_title">Замовлення</string>
+
 
 
 </resources>

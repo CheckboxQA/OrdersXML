@@ -13,7 +13,7 @@ class StartScreen : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         binding.orderWithDelivery.setOnClickListener {
-            val intent = Intent(this, OrderScreen::class.java)
+            val intent = Intent(this, Orders::class.java)
             startActivity(intent)
         }
     }

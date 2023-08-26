@@ -1,6 +1,7 @@
 package com.example.ordersxml
 
 data class OrderViewModel(
+    val id: String,
     val address: String,
     val phoneNumber: String,
     val recipient: String,
@@ -10,4 +11,5 @@ data class OrderViewModel(
     val boxNumber: String,
     val paymentType: String,
     val delivery: Boolean,
-)
+) {
+}

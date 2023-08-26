@@ -16,6 +16,9 @@
             android:name=".OrderScreen"
             android:exported="false" />
         <activity
+            android:name=".Orders"
+            android:exported="false" />
+        <activity
             android:name=".StartScreen"
             android:exported="true">
             <intent-filter>

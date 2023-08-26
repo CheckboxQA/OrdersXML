@@ -18,6 +18,7 @@ class OrderScreen : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.order_screen)
 
         val orderModel = OrderViewModel(
+            id = "1",
             address = "Some address",
             phoneNumber = "1234567890",
             recipient = "John Doe",
