@@ -1,6 +1,6 @@
 package com.example.ordersxml
 
-data class OrderViewModel(
+data class Order(
     val id: String,
     val address: String,
     val phoneNumber: String,

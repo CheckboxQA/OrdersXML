@@ -1,5 +1,6 @@
 package com.example.ordersxml
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,7 @@ class Orders : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.orders_list_screen)
 
-        val firstOrder = OrderViewModel(
+        val firstOrder = Order(
                 id = "1",
                 address = "Some address",
                 phoneNumber = "1234567890",
@@ -27,7 +28,7 @@ class Orders : AppCompatActivity() {
                 paymentType = "Credit Card",
                 delivery = false
         )
-        val  secondOrder = OrderViewModel(
+        val  secondOrder = Order(
                 id = "2",
                 address = "Another address",
                 phoneNumber = "9876543210",
@@ -44,11 +45,18 @@ class Orders : AppCompatActivity() {
 
         setupRecyclerView(ordersList)
     }
-    private fun setupRecyclerView(ordersList: List<OrderViewModel>) {
-        adapter = OrderAdapter()
+
+    private fun setupRecyclerView(ordersList: List<Order>) {
+        adapter = OrderAdapter { order ->
+            // Обработка клика на элементе списка
+            // Здесь вы можете открыть экран OrderScreen с передачей данных о заказе
+            val intent = Intent(this, OrderScreen::class.java)
+            startActivity(intent)
+        }
         binding!!.ordersList.adapter = adapter
         binding!!.ordersList.layoutManager = LinearLayoutManager(this)
-        adapter!!.submitList(ordersList.toMutableList())
+        adapter!!.submitList(ordersList)
         Log.d("OrdersList", "Order list size: ${ordersList.size}")
     }
     }
+

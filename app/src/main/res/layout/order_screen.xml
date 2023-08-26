@@ -9,7 +9,7 @@
 
         <variable
             name="dataModel"
-            type="com.example.ordersxml.OrderViewModel" />
+            type="com.example.ordersxml.Order" />
     </data>
 
     <ScrollView
