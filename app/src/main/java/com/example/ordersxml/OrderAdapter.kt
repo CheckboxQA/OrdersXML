@@ -12,9 +12,6 @@ class OrderAdapter(private val itemClickListener: (Order) -> Unit):
         inner class OrderViewHolder(private val binding: ItemOrdersBinding):RecyclerView.ViewHolder(binding.root){
             fun bind(order: Order){
                 binding.order = order
-                binding.orderAddress.text = order.address
-                binding.orderComment.text = order.comment
-                binding.orderNumberDate.text = order.numberAndData
                 binding.root.setOnClickListener {
                     itemClickListener.invoke(order)
                 }
