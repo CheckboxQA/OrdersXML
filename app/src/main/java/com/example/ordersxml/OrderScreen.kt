@@ -45,6 +45,9 @@ class OrderScreen : Fragment(R.layout.order_screen) {
             Product("3","Кава", "3216754121", "₴ 55.60", "1 х 55.60"),
             Product("4","Чай", null, "₴ 440.75", "1 х 440.75")
         )
+        binding!!.payButton.setOnClickListener {
+            navController?.navigate(R.id.confirmPayment)
+        }
 
         setupRecyclerView(productList)
     }
