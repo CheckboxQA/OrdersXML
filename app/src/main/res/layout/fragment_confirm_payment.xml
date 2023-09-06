@@ -2,10 +2,11 @@
     <androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".ConfirmPayment"
+        android:layout_gravity="center"
         android:background="@color/white"
         >
 
@@ -14,7 +15,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@color/white"
-            android:gravity="center"
             >
             <TextView
                 android:id="@+id/messageTextView"
@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/roboto"
-                android:text="Вы действительно хотите оплатить заказ?"
+                android:text="@string/payment_modal_title"
                 android:textSize="18sp"
                 android:layout_margin="10dp"/>
 
@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Оплатить" />
+                android:text="@string/payment_modal_confirm" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/no_button"
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Отменить" />
+                android:text="@string/payment_modal_decline" />
 
 
         </LinearLayout>

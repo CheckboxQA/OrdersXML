@@ -22,7 +22,7 @@
             android:id="@+id/action_orderScreen_to_confirmPayment"
             app:destination="@id/confirmPayment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/confirmPayment"
         android:name="com.example.ordersxml.ConfirmPayment"
         android:label="fragment_confirm_payment"
@@ -33,5 +33,5 @@
         <action
             android:id="@+id/action_confirmPayment_to_orderScreen"
             app:destination="@id/orderScreen" />
-    </fragment>
+    </dialog>
 </navigation>

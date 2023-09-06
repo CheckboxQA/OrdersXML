@@ -46,7 +46,7 @@ class OrderScreen : Fragment(R.layout.order_screen) {
             Product("4","Чай", null, "₴ 440.75", "1 х 440.75")
         )
         binding!!.payButton.setOnClickListener {
-            navController?.navigate(R.id.confirmPayment)
+            navController?.navigate(R.id.action_orderScreen_to_confirmPayment)
         }
 
         setupRecyclerView(productList)
@@ -57,6 +57,5 @@ class OrderScreen : Fragment(R.layout.order_screen) {
         binding!!.itemsList.adapter = adapter
         binding!!.itemsList.layoutManager = LinearLayoutManager(requireContext())
         adapter!!.submitList(products)
-        Log.d("OrderScreen", "Product list size: ${products.size}")
     }
 }
