@@ -9,7 +9,6 @@
         android:layout_gravity="center"
         app:cardCornerRadius="8dp"
         android:background="@color/white"
-
         >
 
         <LinearLayout
