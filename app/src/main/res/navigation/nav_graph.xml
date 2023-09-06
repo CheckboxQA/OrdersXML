@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/orders">
+    <fragment
+        android:id="@+id/orders"
+        android:name="com.example.ordersxml.Orders"
+        android:label="orders_list_screen"
+        tools:layout="@layout/orders_list_screen" >
+        <action
+            android:id="@+id/action_orders_to_orderScreen"
+            app:destination="@id/orderScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderScreen"
+        android:name="com.example.ordersxml.OrderScreen"
+        android:label="order_screen"
+        tools:layout="@layout/order_screen" />
+</navigation>

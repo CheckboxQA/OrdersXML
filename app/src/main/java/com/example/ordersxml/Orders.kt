@@ -3,18 +3,23 @@ package com.example.ordersxml
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
+import android.view.View
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ordersxml.databinding.OrdersListScreenBinding
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 
-class Orders : AppCompatActivity() {
+class Orders : Fragment(R.layout.orders_list_screen) {
     private var binding: OrdersListScreenBinding? = null
     private var adapter: OrderAdapter? = null
+    private var navController: NavController? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.orders_list_screen)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding = OrdersListScreenBinding.bind(view)
+        navController = Navigation.findNavController(view)
 
         val firstOrder = Order(
                 id = "1",
@@ -48,13 +53,11 @@ class Orders : AppCompatActivity() {
 
     private fun setupRecyclerView(ordersList: List<Order>) {
         adapter = OrderAdapter { order ->
-            val intent = Intent(this, OrderScreen::class.java)
-            startActivity(intent)
+            navController?.navigate(R.id.action_orders_to_orderScreen)
         }
         binding!!.ordersList.adapter = adapter
-        binding!!.ordersList.layoutManager = LinearLayoutManager(this)
+        binding!!.ordersList.layoutManager = LinearLayoutManager(requireContext())
         adapter!!.submitList(ordersList)
-        Log.d("OrdersList", "Order list size: ${ordersList.size}")
     }
     }
 

@@ -5,17 +5,23 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ordersxml.databinding.OrderScreenBinding
+import com.example.ordersxml.databinding.OrdersListScreenBinding
 
-class OrderScreen : AppCompatActivity() {
+class OrderScreen : Fragment(R.layout.order_screen) {
     private var binding: OrderScreenBinding? = null
     private var adapter: ProductAdapter? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.order_screen)
+    private var navController: NavController? = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = OrderScreenBinding.bind(view)
+        navController = Navigation.findNavController(view)
 
         val orderModel = Order(
             id = "1",
@@ -33,15 +39,6 @@ class OrderScreen : AppCompatActivity() {
         binding!!.dataModel = orderModel
         binding!!.lifecycleOwner = this
 
-        binding!!.deliveryDoneButton.setOnClickListener {
-            val intent = Intent(this, StartScreen::class.java)
-            startActivity(intent)
-        }
-        binding!!.backArrow.setOnClickListener{
-            val intent = Intent(this, StartScreen::class.java)
-            startActivity(intent)
-        }
-
         val productList = listOf(
             Product("1","Рістретто", null, "₴ 440.60", "2 х 220.30"),
             Product("2","Молоко", "12345948947", "₴ 98.60", "1 х 98.60"),
@@ -55,7 +52,7 @@ class OrderScreen : AppCompatActivity() {
     private fun setupRecyclerView(products: List<Product>) {
         adapter = ProductAdapter()
         binding!!.itemsList.adapter = adapter
-        binding!!.itemsList.layoutManager = LinearLayoutManager(this)
+        binding!!.itemsList.layoutManager = LinearLayoutManager(requireContext())
         adapter!!.submitList(products)
         Log.d("OrderScreen", "Product list size: ${products.size}")
     }
